@@ -5,7 +5,7 @@ export class About extends Component {
   render() {
     return (
       <>
-        <h4>About.js Page</h4>
+        <h4>About.js Page here we go!!</h4>
       </>
     )
   }

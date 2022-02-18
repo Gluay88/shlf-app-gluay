@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 export class Blog extends Component {
@@ -7,8 +7,8 @@ export class Blog extends Component {
       <>
         <h4>Blog.js Page</h4>
       </>
-    )
+    );
   }
 }
 
-export default Blog
+export default Blog;

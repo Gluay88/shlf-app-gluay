@@ -1,24 +1,55 @@
-# README
+02/17/2022
+Gluay-
+$ rails new apartment-app -d postgresql -T
+$ cd apartment-app
+$ rails db:create
+Add the remote from your GitHub classroom repository
+Create a default branch (main)
+Make an initial commit to the repository
+$ bundle add rspec-rails
+$ rails generate rspec:install
+$ bundle add devise
+$ rails generate devise:install
+$ rails generate devise User
+$ bundle add react-rails
+$ rails webpacker:install:react
+$ rails generate react:install
+$ rails generate react:component App
+$ rails generate controller Home
+$ rails db:migrate
+$ rails s
+- add bootstrap
+yarn add bootstrap
+yarn add reactstrap
+Add to src/index.js: import 'bootstrap/dist/css/bootstrap.min.css'
+- add jest in package.json
+"jest": {
+    "roots": [
+      "app/javascript/components"
+    ]
+  }
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+yarn add react-router-dom@5.3.0
 
-Things you may want to cover:
+add components
++ components
+- assets
+- components
+- pages
 
-* Ruby version
+rails g resource Shlf name:string room_temp:string refrigerator_temp:string freezer_temp:string image:text
 
-* System dependencies
+rails db:migrate
 
-* Configuration
+rails g resource Blog name:string comment:string user_id:integer shlf_id:integer
 
-* Database creation
+rails db:migrate
 
-* Database initialization
+app/models
+user.rb has_many :blog
+blog.rb belongs_to :user
+blog.rb belongs_to :shlf
+shlf.rb has-many :blog
 
-* How to run the test suite
+=========================
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

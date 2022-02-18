@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import mockShlves from "./mockShlves.js";
 import NotFound from "./pages/NotFound";
 import ShlfIndex from "./pages/ShlfIndex";
+import Navbar from "./components/Navbar";
 
 export class App extends Component {
   constructor(props) {
@@ -23,10 +24,12 @@ export class App extends Component {
         <h1>Shlf App - Hello World!</h1>
         <p>Content goes here.</p>
         <Router>
+            < Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/blog" component={Blog} />
+            <Route path="/index" component={ShlfIndex} />
           </Switch>
         </Router>
         <Footer />

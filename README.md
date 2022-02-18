@@ -28,3 +28,28 @@ Add to src/index.js: import 'bootstrap/dist/css/bootstrap.min.css'
       "app/javascript/components"
     ]
   }
+
+yarn add react-router-dom@5.3.0
+
+add components
++ components
+- assets
+- components
+- pages
+
+rails g resource Shlf name:string room_temp:string refrigerator_temp:string freezer_temp:string image:text
+
+rails db:migrate
+
+rails g resource Blog name:string comment:string user_id:integer shlf_id:integer
+
+rails db:migrate
+
+app/models
+user.rb has_many :blog
+blog.rb belongs_to :user
+blog.rb belongs_to :shlf
+shlf.rb has-many :blog
+
+=========================
+

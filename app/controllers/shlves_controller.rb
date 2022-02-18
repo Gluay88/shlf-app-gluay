@@ -1,0 +1,3 @@
+class ShlvesController < ApplicationController
+    
+end

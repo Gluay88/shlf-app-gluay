@@ -1,12 +1,13 @@
-import React from "react"
+import React, { Component } from 'react'
 
-class App extends React.Component {
-  render () {
+export class App extends Component {
+  render() {
     return (
-      <React.Fragment>
-        <h1>HolÀ Mundo</h1>
-      </React.Fragment>
-    );
+      <>
+        <h1>Shlf App - Hello World!</h1>
+        <h4>App.js Page</h4>
+      </>
+    )
   }
 }
 

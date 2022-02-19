@@ -59,4 +59,6 @@ bin/webpack-dev-server
 - ShlfIndex.js
 - ShlfShow.js
 - added link to FDA info
+- added About page
+
 

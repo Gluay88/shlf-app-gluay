@@ -52,4 +52,11 @@ blog.rb belongs_to :shlf
 shlf.rb has-many :blog
 
 =========================
+02/19/2020
+bin/webpack-dev-server
+- changed the Nav order and name
+- added a tag on the shlf logo to link to localhost:3000
+- ShlfIndex.js
+- ShlfShow.js
+- added link to FDA info
 

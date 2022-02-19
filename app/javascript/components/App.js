@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import mockShlves from "./mockShlves.js";
 import NotFound from "./pages/NotFound";
 import ShlfIndex from "./pages/ShlfIndex";
+import ShlfShow from "./pages/ShlfShow";
 import Navbar from "./components/Navbar";
 
 export class App extends Component {
@@ -24,12 +25,23 @@ export class App extends Component {
         <h1>Shlf App - Hello World!</h1>
         <p>Content goes here.</p>
         <Router>
-            < Navbar />
+          <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/blog" component={Blog} />
-            <Route path="/index" component={ShlfIndex} />
+            <Route
+              path="/shlfindex"
+              render={(props) => <ShlfIndex shlves={this.state.shlves} />}
+            />
+            <Route
+              path="/shlfshow/:id"
+              render={(props) => {
+                let id = props.match.params.id;
+                let shlf = this.state.shlves.find((shlf) => shlf.id === +id);
+                return <ShlfShow shlf={shlf} />;
+            }}
+            />
           </Switch>
         </Router>
         <Footer />

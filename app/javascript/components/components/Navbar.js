@@ -35,8 +35,12 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/about" className="nav-links" onClick={closeMenu}>
-                About Us
+              <NavLink
+                to="/shlfindex"
+                className="nav-links"
+                onClick={closeMenu}
+              >
+                Shlf
               </NavLink>
             </li>
             <li>
@@ -45,12 +49,8 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                to="/index"
-                className="nav-links"
-                onClick={closeMenu}
-              >
-                Projects
+              <NavLink to="/about" className="nav-links" onClick={closeMenu}>
+                About
               </NavLink>
             </li>
           </ul>

@@ -12,6 +12,8 @@ import ShlfIndex from "./pages/ShlfIndex";
 import ShlfShow from "./pages/ShlfShow";
 import Navbar from "./components/Navbar";
 import BlogShow from "./pages/BlogShow";
+import BlogNew from "./pages/BlogNew";
+import BlogEdit from "./pages/BlogEdit";
 
 export class App extends Component {
   constructor(props) {
@@ -21,6 +23,20 @@ export class App extends Component {
       blogs: mockBlogs,
     };
   }
+
+  createBlog = (blog) => {
+    console.log(blog);
+  };
+
+  updateBlog = (blog, id) => {
+    console.log("blog", blog);
+    console.log("id", id);
+  };
+
+  deleteBlog = (id) => {
+    console.log("id", id);
+  }
+
   render() {
     return (
       <>
@@ -44,20 +60,32 @@ export class App extends Component {
               }}
             />
             <Route
-            path="/blogindex"
-            render={(props) => <BlogIndex blogs={this.state.blogs} />}
+              path="/blogindex"
+              render={(props) => <BlogIndex blogs={this.state.blogs} />}
             />
             <Route
-            path="/blogshow/:id"
-            render={(props) => {
-              let id = props.match.params.id;
-              let blog = this.state.blogs.find((blog) => blog.id === +id);
-              return <BlogShow blog={blog} />;
-            }}
+              path="/blogshow/:id"
+              render={(props) => {
+                let id = props.match.params.id;
+                let blog = this.state.blogs.find((blog) => blog.id === +id);
+                return <BlogShow blog={blog} deleteBlog={this.deleteBlog} />;
+              }}
             />
-            
-           
+            <Route
+              path="/blognew"
+              render={(props) => <BlogNew createBlog={this.createBlog} />}
+            />
+
+            <Route
+            path="/blogedit/:id"
+            render={(props) => {
+              let id = props.match.params.id
+              let blog = this.state.blogs.find(blog => blog.id === +id)
+              return <BlogEdit updateBlog={this.updateBlog} blog={blog} />
+            }} />
+
             <Route path="/about" component={About} />
+            <Route component={NotFound}/>
           </Switch>
         </Router>
         <Footer />

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Card, CardTitle, Col } from "reactstrap";
+import { Button } from "reactstrap";
 
 export class BlogIndex extends Component {
   render() {
@@ -23,6 +24,12 @@ export class BlogIndex extends Component {
             );
           })}
         </Col>
+        <br />
+        <Button>
+          <a href="http://localhost:3000/blognew" style={{ color: "#fff" }}>
+            Add your comment
+          </a>
+        </Button>
       </>
     );
   }

@@ -63,5 +63,6 @@ bin/webpack-dev-server
 - added About page
 - added BlogIndex page
 - added BlogShow page
+- read/create/update/delete functionalities 
 
 

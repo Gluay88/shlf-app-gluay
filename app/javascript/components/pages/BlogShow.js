@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, CardTitle, Col } from "reactstrap";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Button } from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 export class BlogShow extends Component {
   constructor(props) {
@@ -20,9 +21,13 @@ export class BlogShow extends Component {
           </Card>
         </Col>
         <br />
-        <Button>Edit your comment</Button>
+        <NavLink to={`/blogedit/${this.props.blog.id}`}>
+          <Button>Edit comment</Button>
+        </NavLink>
         <br />
-        <Button>Delete your comment</Button>
+        <NavLink to="/blogindex" onClick={this.handleSubmit}>
+        <Button>Delete comment</Button>
+      </NavLink>
       </>
     );
   }

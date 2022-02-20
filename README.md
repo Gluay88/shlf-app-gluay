@@ -52,7 +52,7 @@ blog.rb belongs_to :shlf
 shlf.rb has-many :blog
 
 =========================
-02/19/2020
+02/19/2022
 bin/webpack-dev-server
 
 - changed the Nav order and name
@@ -64,5 +64,8 @@ bin/webpack-dev-server
 - added BlogIndex page
 - added BlogShow page
 - read/create/update/delete functionalities 
+
+02/20/2022
+- added more items to both blog and shlf mockDatas
 
 

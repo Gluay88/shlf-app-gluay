@@ -15,8 +15,8 @@ export class BlogIndex extends Component {
                 <CardTitle>
                   <div>
                     <NavLink to={`/blogshow/${blog.id}`} key={blog.id}>
-                      <h5>Name: {blog.name}</h5>
-                      <p>comment: {blog.comment}</p>
+                      <h5>Title: {blog.name}</h5>
+                      <p>Comment: {blog.comment}</p>
                     </NavLink>
                   </div>
                 </CardTitle>

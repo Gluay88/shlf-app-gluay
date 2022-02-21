@@ -67,5 +67,5 @@ bin/webpack-dev-server
 
 02/20/2022
 - added more items to both blog and shlf mockDatas
-
+- finished frontend 
 

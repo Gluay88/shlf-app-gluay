@@ -35,22 +35,22 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/about" className="nav-links" onClick={closeMenu}>
-                About Us
+              <NavLink
+                to="/shlfindex"
+                className="nav-links"
+                onClick={closeMenu}
+              >
+                Shlf
               </NavLink>
             </li>
             <li>
-              <NavLink to="/blog" className="nav-links" onClick={closeMenu}>
+              <NavLink to="/blogindex" className="nav-links" onClick={closeMenu}>
                 Blog
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                to="/index"
-                className="nav-links"
-                onClick={closeMenu}
-              >
-                Projects
+              <NavLink to="/about" className="nav-links" onClick={closeMenu}>
+                About
               </NavLink>
             </li>
           </ul>

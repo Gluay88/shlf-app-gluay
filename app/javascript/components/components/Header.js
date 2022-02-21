@@ -6,7 +6,7 @@ export class Header extends Component {
     return (
       <>
         <h4>Header goes here.</h4>
-        <a href="#">
+        <a href="/">
           <img src={ShlfLogo} alt="Shlf Logo" width="250px" />
         </a>
       </>

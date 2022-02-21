@@ -9,7 +9,6 @@ export class BlogShow extends Component {
     this.state = {};
   }
   render() {
-    console.log(this.props.blog);
     const { blog } = this.props;
     return (
       <>

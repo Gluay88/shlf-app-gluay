@@ -8,7 +8,6 @@ export class ShlfShow extends Component {
     this.state = {};
   }
   render() {
-    console.log(this.props.shlf);
     const { shlf } = this.props;
     return (
       <>

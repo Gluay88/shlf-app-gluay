@@ -69,3 +69,7 @@ bin/webpack-dev-server
 - added more items to both blog and shlf mockDatas
 - finished frontend 
 
+02/21/2022
+- navigation styling
+- API Seed
+

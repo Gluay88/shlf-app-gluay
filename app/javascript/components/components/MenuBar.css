@@ -1,0 +1,17 @@
+.MenuBar{
+
+display: flex;
+justify-content: flex-start;
+/* align-items: flex-start; */
+
+}
+
+NavLink{
+color: brown;
+
+
+}
+
+p{
+    color: crimson;
+}

@@ -76,3 +76,6 @@ ran these commands in terminal
 $ rm /usr/local/var/postgres/postmaster.pid
 $ brew services restart postgresql
 - BlogController 
+
+02/22/2022
+- users 

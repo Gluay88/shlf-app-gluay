@@ -5,7 +5,6 @@ export class Home extends Component {
   render() {
     return (
       <>
-        <h2>Home.js</h2>
       </>
     );
   }

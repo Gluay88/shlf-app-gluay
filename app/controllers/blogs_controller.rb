@@ -6,7 +6,6 @@ class BlogsController < ApplicationController
     end
 
     def create 
-        byebug
         blog = Blog.create(blog_params)
         if blog.valid?
             render json: blog

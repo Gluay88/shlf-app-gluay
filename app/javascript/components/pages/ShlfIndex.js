@@ -6,7 +6,7 @@ export class ShlfIndex extends Component {
   render() {
     return (
       <>
-        <h4>ShlfIndex.js Page</h4>
+        
         <br />
         <Col sm="6">
           {this.props.shlves.map((shlf) => {

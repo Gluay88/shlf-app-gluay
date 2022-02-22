@@ -77,8 +77,7 @@ export class App extends Component {
     return (
       <>
         <Header />
-        <h1>Shlf App - Hello World!</h1>
-        <p>Content goes here.</p>
+        
         <Router>
           <Navbar />
           <Switch>

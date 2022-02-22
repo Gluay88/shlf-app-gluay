@@ -172,7 +172,6 @@ shlves = [
 ];
 
 users.each do |user|
-    # puts "user"
     User.create!(user) 
 end
 

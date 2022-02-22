@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import BlogIndex from "./pages/BlogIndex";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ShlfIndex from "./pages/ShlfIndex";
@@ -11,6 +11,8 @@ import MenuBar from "./components/MenuBar";
 import BlogShow from "./pages/BlogShow";
 import BlogNew from "./pages/BlogNew";
 import BlogEdit from "./pages/BlogEdit";
+
+
 // import Particles from "react-particles-js";
 
 export class App extends Component {
@@ -88,9 +90,9 @@ export class App extends Component {
             }
           }
         }} */}
-      />
+      {/* /> */}
         
-       
+      
         <Router>
           <MenuBar />
           <Switch>
@@ -136,7 +138,7 @@ export class App extends Component {
             <Route component={NotFound}/>
           </Switch>
         </Router>
-        <Footer />
+      
       </>
     );
   }

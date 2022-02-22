@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink,} from "reactstrap";
-import ShlfLogo from "../assets/shlf.svg"
-import "./MenuBar.css"
-
-
-
-
-
+import {
+  Collapse,
+  Nav,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  NavItem,
+  NavLink,
+} from "reactstrap";
+import ShlfLogo from "../assets/shlf.svg";
+import "./MenuBar.css";
+import { Link } from "react-router-dom";
 
 // import "./Navbar.css";
 function MenuBar() {
@@ -26,56 +30,52 @@ function MenuBar() {
   }, []);
   window.addEventListener("resize", showButton);
 
-
   return (
     <div>
-  <Navbar
-    color="dark"
-    dark
-    expand="md"
-    light >
-      
-    <NavbarBrand href="/">
-    <img src={ShlfLogo} alt="Shlf Logo" width="150px" />
-        
-    </NavbarBrand>
-    <NavbarToggler onClick={function noRefCheck(){}} />
-    <Collapse navbar>
-      <Nav
-        className="me-auto"
-        navbar
-      >
-        <NavItem>
-          <NavLink to= "/" className="nav-link" onClick={closeMenu}>
-                <p>Home</p>
-          </NavLink>
-          </NavItem>
-          <NavItem>
-          <NavLink to="/shlfindex" className="nav-link" onClick={closeMenu}>
+      <Navbar color="dark" dark expand="md" light>
+        <NavbarBrand href="/">
+          <img src={ShlfLogo} alt="Shlf Logo" width="150px" />
+        </NavbarBrand>
+        <NavbarToggler onClick={function noRefCheck() {}} />
+        <Collapse navbar>
+          <Nav className="me-auto" navbar>
+            <Link to="/">
+              <NavItem>
+                <NavLink className="nav-link" onClick={closeMenu}>
+                  <p>Home</p>
+                </NavLink>
+                </NavItem>
+            </Link>
+            <Link to="/shlfindex">
+            <NavItem>
+              <NavLink className="nav-link" onClick={closeMenu}>
                 Shlf
-           </NavLink>
-           </NavItem>
-           <NavItem>
-          <NavLink to="/blogindex" className="nav-link" onClick={closeMenu}>
+              </NavLink>
+            </NavItem>
+            </Link>
+            <Link to="/blogindex">
+            <NavItem>
+              <NavLink to="/blogindex" className="nav-link" onClick={closeMenu}>
                 Blog
-          </NavLink >
-          </NavItem>
-          <NavItem>
-            <NavLink to="/about" className="nav-link" onClick={closeMenu}>
+              </NavLink>
+            </NavItem>
+            </Link>
+            <Link to="/about">
+            <NavItem>
+              <NavLink to="/about" className="nav-link" onClick={closeMenu}>
                 About
-          </NavLink>
-          </NavItem>
-          <NavItem>
-          <NavLink to="/about" className="nav-link" onClick={closeMenu}>
+              </NavLink>
+            </NavItem>
+            </Link>
+            <NavItem>
+              <NavLink to="/about" className="nav-link" onClick={closeMenu}>
                 Login
-          </NavLink>
-          </NavItem>
-        </Nav>
-    
-    </Collapse>
-  </Navbar>
-</div>
-  
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
   );
 }
 export default MenuBar;

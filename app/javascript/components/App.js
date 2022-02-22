@@ -5,8 +5,6 @@ import BlogIndex from "./pages/BlogIndex";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import mockShlves from "./mockShlves.js";
-import mockBlogs from "./mockBlogs.js";
 import NotFound from "./pages/NotFound";
 import ShlfIndex from "./pages/ShlfIndex";
 import ShlfShow from "./pages/ShlfShow";
@@ -19,18 +17,56 @@ export class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      shlves: mockShlves,
-      blogs: mockBlogs,
+      shlves: [],
+      blogs: [],
     };
   }
 
-  createBlog = (blog) => {
-    console.log(blog);
-  };
+  componentDidMount(){
+    this.readBlog(),
+    this.readShlf()
+  }
+
+  readBlog(){
+    fetch("http://localhost:3000/blogs")
+    .then(response => response.json())
+    .then(blogsArray => this.setState({blogs: blogsArray}))
+    .catch(errors => console.log("Blog read errors:", errors))
+
+  }
+
+  readShlf(){
+    fetch("http://localhost:3000/shlves")
+    .then(response => response.json())
+    .then(shlvesArray => this.setState({shlves: shlvesArray}))
+    .catch(errors => console.log("Shlf read errors:", errors))
+
+  }
+
+  createBlog = (newBlog) => {
+    fetch("http://localhost:3000/blogs", {
+    body: JSON.stringify(newBlog),  
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "POST"
+  })
+  .then(response => response.json())
+  .then(payload => this.readBlog())
+  .catch(errors => console.log("Blog create errors:", errors))
+  }
 
   updateBlog = (blog, id) => {
-    console.log("blog", blog);
-    console.log("id", id);
+    fetch(`http://localhost:3000/blogs/${id}`, {
+      body: JSON.stringify(blog),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => response.json())
+    .then(payload => this.readBlog())
+    .catch(errors => console.log("Blog update errors: ", errors))
   };
 
   deleteBlog = (id) => {
@@ -41,8 +77,7 @@ export class App extends Component {
     return (
       <>
         <Header />
-        <h1>Shlf App - Hello World!</h1>
-        <p>Content goes here.</p>
+        
         <Router>
           <Navbar />
           <Switch>

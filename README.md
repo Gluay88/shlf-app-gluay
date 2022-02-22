@@ -1,5 +1,5 @@
 02/17/2022
-Gluay-
+
 $ rails new apartment-app -d postgresql -T
 $ cd apartment-app
 $ rails db:create
@@ -51,7 +51,6 @@ blog.rb belongs_to :user
 blog.rb belongs_to :shlf
 shlf.rb has-many :blog
 
-=========================
 02/19/2022
 bin/webpack-dev-server
 
@@ -69,3 +68,11 @@ bin/webpack-dev-server
 - added more items to both blog and shlf mockDatas
 - finished frontend 
 
+02/21/2022
+- navigation styling
+- seeds.rb user/shlf/blog
+- Ran into this problem PG::ConnectionBad
+ran these commands in terminal
+$ rm /usr/local/var/postgres/postmaster.pid
+$ brew services restart postgresql
+- BlogController 

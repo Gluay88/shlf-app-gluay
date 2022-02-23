@@ -1,0 +1,93 @@
+/* ---------------------------------- Contact Us Components-------------------- */
+
+.contacts {
+    background: #212529;
+    padding: 3rem 0;
+
+}
+
+.contacts h1 {
+    color: white;
+    padding: 1.3rem 0;
+    text-transform: uppercase;
+
+}
+
+.contacts p {
+    color: white;
+    font-size: 1.2rem;
+
+}
+
+
+/* ----------------------------INPUTS--------------------------------- */
+.contacts input, .contacts textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background: none;
+    resize: none;
+    border: 0;
+    border-bottom: 0.125rem solid white;
+    border-radius: 0;
+    color: white;
+    outline: 0 !important;
+    box-shadow: none !important;
+    margin-bottom: 1rem;
+    padding-left: 0 !important;
+
+}
+
+.contacts .container {
+    padding: 4rem 0;
+}
+
+.contacts input:focus, .contacts textarea:focus {
+    background: transparent;
+    color: thistle;
+    border-bottom: 0.125rem solid white;
+
+}
+
+
+.contacts textarea {
+    height: 10rem !important;
+
+}
+
+.contacts-btn {
+    margin: 1rem 0 0 0;
+    width: 100%;
+    background: none;
+
+}
+
+
+.line{
+    position: relative;
+    top: -0rem;
+    width: 0;
+    height: 0.125rem;
+    background: #70A9AA;
+    display: inline-block;
+
+
+}
+
+input:focus+.line, textarea:focus+.line {
+    width: 100%;
+    transition: width 0.5s ease-in-out;
+
+
+}
+
+
+input.form-control {
+    margin: -0.3rem 0;
+
+}
+
+textarea.form-control {
+    margin: -0.3rem 0;
+
+}
+

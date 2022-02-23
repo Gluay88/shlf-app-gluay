@@ -41,25 +41,12 @@ const About = () => {
           </h3>
          
         </div>
-        <div className="About">
-          <br></br>
-          <br></br>
-          <h1>What is Shlf ?</h1>
-          <br></br>
-          <h3>
-            I believe you must bring your whole self to the table if you want to
-            thrive in today’s crazy world; your personality, your sense of
-            humor, and most importantly, your heart. All of these elements
-            brought me to found Shlf back in 2000. Since then, the blog has been
-            thriving and has quickly gained a loyal following. I invite you to
-            explore my site, learn about my passions, and explore what excites
-            and interests you as well.
-          </h3>
+        
          
         </div>
         </div>
         </div>
-        </div>
+       
   
   );
 };

@@ -11,6 +11,8 @@ import MenuBar from "./components/MenuBar";
 import BlogShow from "./pages/BlogShow";
 import BlogNew from "./pages/BlogNew";
 import BlogEdit from "./pages/BlogEdit";
+import Contacts from "./components/Contacts";
+import './App.css';
 
 
 // import Particles from "react-particles-js";
@@ -138,6 +140,7 @@ export class App extends Component {
             <Route component={NotFound}/>
           </Switch>
         </Router>
+        <Contacts/>
       
       </>
     );

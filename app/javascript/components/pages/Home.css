@@ -64,17 +64,18 @@
 }
 
 /* -------------------------------------------------BTN---------------------------------------------------------------------- */
-
+/* 
 .btn-main{
 
-    border: 2px solid var(white);
-    text-transform: uppercase;
-    border-radius: 0;
-    padding: 0.625rem 0.75rem 0.75rem 0.75rem;
-    color: var(--primary-black);
-    margin: 2rem;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
     display: flex;
-    justify-content: center;
+   justify-content: center;
     
-}
+} */
 

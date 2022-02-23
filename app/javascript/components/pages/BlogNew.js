@@ -9,7 +9,7 @@ export class BlogNew extends Component {
       newBlog: {
         name: "",
         comment: "",
-        user_id: "",
+        user_id: this.props.current_user.id,
         shlf_id: "",
       },
       submitted: false,

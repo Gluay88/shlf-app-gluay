@@ -6,7 +6,8 @@ class BlogsController < ApplicationController
     end
 
     def create 
-        blog = Blog.create(blog_params)
+        shlf = Shlf.find(params[:shlf_id])
+        blog = shlf.blogs.create(blog_params) 
         if blog.valid?
             render json: blog
         else

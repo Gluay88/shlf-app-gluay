@@ -27,12 +27,11 @@ export class App extends Component {
     this.readShlf()
   }
 
-  readBlog(){
+  readBlog() {
     fetch("http://localhost:3000/blogs")
-    .then(response => response.json())
-    .then(blogsArray => this.setState({blogs: blogsArray}))
-    .catch(errors => console.log("Blog read errors:", errors))
-
+      .then((response) => response.json())
+      .then((blogsArray) => this.setState({ blogs: blogsArray }))
+      .catch((errors) => console.log("Blog read errors:", errors));
   }
 
   readShlf(){
@@ -47,14 +46,13 @@ export class App extends Component {
     fetch("http://localhost:3000/blogs", {
     body: JSON.stringify(newBlog),  
     headers: {
-      "Content-Type": "application/json"
+        "Content-Type": "application/json",
     },
-    method: "POST"
+      method: "POST",
   })
-  .then(response => response.json())
-  .then(payload => this.readBlog())
-  .catch(errors => console.log("Blog create errors:", errors))
-  }
+      .then((response) => response.json())
+      .catch((errors) => console.log("Blog create errors:", errors));
+  };
 
   updateBlog = (blog, id) => {
     fetch(`http://localhost:3000/blogs/${id}`, {

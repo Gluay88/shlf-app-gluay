@@ -17,45 +17,51 @@ function Navbar() {
     showButton();
   }, []);
   window.addEventListener("resize", showButton);
+
+
   return (
-    <>
-      <nav className="navbar">
+    <header class="masthead mb-auto">
+      
+      <div class="inner">
+      <nav className="navbar nav nav-masthead justify-content-center">
         <div className="navbar-container">
-          <NavLink to="/" className="navbar-logo" onClick={closeMenu}>
+          <NavLink to="/" className="nav-link" onClick={closeMenu}>
             RYDG
           </NavLink>
-          <div className="menu-icon" onClick={handleClick}>
+          <div className="nav-link" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <NavLink to="/" className="nav-links" onClick={closeMenu}>
+              <NavLink to="/" className="nav-link" onClick={closeMenu}>
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-link">
               <NavLink
                 to="/shlfindex"
-                className="nav-links"
+                className="nav-link"
                 onClick={closeMenu}
               >
                 Shlf
               </NavLink>
             </li>
             <li>
-              <NavLink to="/blogindex" className="nav-links" onClick={closeMenu}>
+              <NavLink to="/blogindex" className="nav-link" onClick={closeMenu}>
                 Blog
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/about" className="nav-links" onClick={closeMenu}>
+              <NavLink to="/about" className="nav-link" onClick={closeMenu}>
                 About
               </NavLink>
             </li>
           </ul>
         </div>
+        
       </nav>
-    </>
+      </div>
+    </header>
   );
 }
 export default Navbar;

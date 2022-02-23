@@ -3,12 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import BlogIndex from "./pages/BlogIndex";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ShlfIndex from "./pages/ShlfIndex";
 import ShlfShow from "./pages/ShlfShow";
-import Navbar from "./components/Navbar";
+import MenuBar from "./components/MenuBar";
 import BlogShow from "./pages/BlogShow";
 import BlogNew from "./pages/BlogNew";
 import BlogEdit from "./pages/BlogEdit";
@@ -76,10 +75,10 @@ export class App extends Component {
   render() {
     return (
       <>
-        <Header />
         
+       
         <Router>
-          <Navbar />
+          <MenuBar />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route

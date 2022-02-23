@@ -6,6 +6,8 @@ import "./MenuBar.css"
 
 
 
+
+
 // import "./Navbar.css";
 function MenuBar() {
   const [click, setClick] = useState(false);
@@ -47,24 +49,28 @@ function MenuBar() {
           <NavLink to= "/" className="nav-link" onClick={closeMenu}>
                 <p>Home</p>
           </NavLink>
-    
+          </NavItem>
+          <NavItem>
           <NavLink to="/shlfindex" className="nav-link" onClick={closeMenu}>
                 Shlf
-            
-          </NavLink>
+           </NavLink>
+           </NavItem>
+           <NavItem>
           <NavLink to="/blogindex" className="nav-link" onClick={closeMenu}>
                 Blog
           </NavLink >
-          <NavLink to="/about" className="nav-link" onClick={closeMenu}>
+          </NavItem>
+          <NavItem>
+            <NavLink to="/about" className="nav-link" onClick={closeMenu}>
                 About
           </NavLink>
+          </NavItem>
+          <NavItem>
           <NavLink to="/about" className="nav-link" onClick={closeMenu}>
                 Login
           </NavLink>
           </NavItem>
-       
-       
-      </Nav>
+        </Nav>
     
     </Collapse>
   </Navbar>

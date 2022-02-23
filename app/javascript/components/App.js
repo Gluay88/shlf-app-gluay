@@ -11,6 +11,7 @@ import MenuBar from "./components/MenuBar";
 import BlogShow from "./pages/BlogShow";
 import BlogNew from "./pages/BlogNew";
 import BlogEdit from "./pages/BlogEdit";
+// import Particles from "react-particles-js";
 
 export class App extends Component {
   constructor(props) {
@@ -75,6 +76,19 @@ export class App extends Component {
   render() {
     return (
       <>
+         {/* <Particles
+        params={{
+          particles: {
+            number: {
+              value: 30,
+              density: {
+                enable: true,
+                value_area: 900
+              }
+            }
+          }
+        }} */}
+      />
         
        
         <Router>

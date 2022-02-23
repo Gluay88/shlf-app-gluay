@@ -26,10 +26,14 @@ export class Home extends Component {
       backSpeed={60}
       loop
       /> 
-      <a href="#" className="btn-main">Learn More</a>
+
       
+      <div className="btn-main">
+      {/* <button href="/shlfindex" >Explore Shlf</button> */}
       </div>
-    
+
+      </div>
+      
     
       </>
     );

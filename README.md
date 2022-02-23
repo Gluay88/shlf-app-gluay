@@ -18,24 +18,27 @@ $ rails generate react:component App
 $ rails generate controller Home
 $ rails db:migrate
 $ rails s
+
 - add bootstrap
-yarn add bootstrap
-yarn add reactstrap
-Add to src/index.js: import 'bootstrap/dist/css/bootstrap.min.css'
+  yarn add bootstrap
+  yarn add reactstrap
+  Add to src/index.js: import 'bootstrap/dist/css/bootstrap.min.css'
 - add jest in package.json
-"jest": {
-    "roots": [
-      "app/javascript/components"
-    ]
+  "jest": {
+  "roots": [
+  "app/javascript/components"
+  ]
   }
 
 yarn add react-router-dom@5.3.0
 
 add components
-+ components
-- assets
+
 - components
-- pages
+
+* assets
+* components
+* pages
 
 rails g resource Shlf name:string room_temp:string refrigerator_temp:string freezer_temp:string image:text
 
@@ -62,20 +65,32 @@ bin/webpack-dev-server
 - added About page
 - added BlogIndex page
 - added BlogShow page
-- read/create/update/delete functionalities 
+- read/create/update/delete functionalities
 
 02/20/2022
+
 - added more items to both blog and shlf mockDatas
-- finished frontend 
+- finished frontend
 
 02/21/2022
+
 - navigation styling
 - seeds.rb user/shlf/blog
 - Ran into this problem PG::ConnectionBad
-ran these commands in terminal
-$ rm /usr/local/var/postgres/postmaster.pid
-$ brew services restart postgresql
-- BlogController 
+  ran these commands in terminal
+  $ rm /usr/local/var/postgres/postmaster.pid
+  $ brew services restart postgresql
+- BlogController
 
 02/22/2022
-- users 
+
+- log_in and out
+- config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+- Rails.application.routes.draw do
+  get '\*path', to: 'home#index', constraints: ->(request){ request.format.html? }
+  root 'home#index'
+  end
+- config.sign_out_via = :get
+
+02/23/2022
+Update functionality

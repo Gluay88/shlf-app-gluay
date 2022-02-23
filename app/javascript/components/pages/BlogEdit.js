@@ -9,21 +9,23 @@ export class BlogEdit extends Component {
       newBlog: {
         name: "",
         comment: "",
+        user_id: this.props.current_user.id,
+        shlf_id: "",
       },
-      submitted: false
+      submitted: false,
     };
   }
 
   handleChange = (e) => {
-      let { newBlog } = this.state
-      newBlog[e.target.name] = e.target.value
-      this.setState({newBlog: newBlog})
-  }
+    let { newBlog } = this.state;
+    newBlog[e.target.name] = e.target.value;
+    this.setState({ newBlog: newBlog });
+  };
 
   handleSubmit = () => {
-      this.props.updateBlog(this.state.newBlog, this.props.blog.id)
-      this.setState({submitted: true})
-  }
+    this.props.updateBlog(this.state.newBlog, this.props.blog.id);
+    this.setState({ submitted: true });
+  };
 
   render() {
     return (
@@ -51,12 +53,11 @@ export class BlogEdit extends Component {
           </FormGroup>
           <Button
             name="submit"
-            onClick={this.handleSubmit}
-            >
-            Edit Blog 
-            </Button>
+            onClick={this.handleSubmit}>
+            Edit Blog
+          </Button>
         </Form>
-        {this.state.submitted && <Redirect to={`/blogshow/${this.props.blog.id}`} />}
+        {this.state.submitted && <Redirect to={`/catblog/${this.props.blog.id}`} />}
       </>
     );
   }

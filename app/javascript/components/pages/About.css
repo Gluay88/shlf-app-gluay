@@ -1,0 +1,36 @@
+.pictures {
+  display: flex;
+  align-items: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  box-shadow: 0px 10px rgba(0, 0, 0, 0.25);
+  padding: 3rem;
+  margin: 1rem 2rem;
+  border-radius: 12px;
+  background: #212529;
+  font-size: 20px;
+  color: whitesmoke;
+  justify-content: center;
+}
+
+.About {
+  text-align: center;
+  margin-left: auto;
+  color: whitesmoke;
+}
+
+#footer-bg {
+  background-image: url("https://images.pexels.com/photos/2280569/pexels-photo-2280569.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.text {
+  color: white;
+}
+
+.jobs {
+  color: whitesmoke;
+}

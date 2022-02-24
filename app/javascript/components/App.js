@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import BlogIndex from "./pages/BlogIndex";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+// import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ShlfIndex from "./pages/ShlfIndex";
 import ShlfShow from "./pages/ShlfShow";
-import Navbar from "./components/Navbar";
+import MenuBar from "./components/MenuBar";
 import BlogShow from "./pages/BlogShow";
 import BlogNew from "./pages/BlogNew";
 import BlogEdit from "./pages/BlogEdit";
+import Contacts from "./components/Contacts";
+import "./App.css";
+
+// import Particles from "react-particles-js";
 
 export class App extends Component {
   constructor(props) {
@@ -88,6 +91,19 @@ export class App extends Component {
     } = this.props;
     return (
       <>
+        {/* <Particles
+        params={{
+          particles: {
+            number: {
+              value: 30,
+              density: {
+                enable: true,
+                value_area: 900
+              }
+            }
+          }
+        }} */}
+        {/* /> */}
         <Header />
 
         {logged_in && (
@@ -102,7 +118,7 @@ export class App extends Component {
         )}
 
         <Router>
-          <Navbar />
+          <MenuBar />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route
@@ -147,8 +163,7 @@ export class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </Router>
-
-        <Footer />
+        <Contacts />
       </>
     );
   }

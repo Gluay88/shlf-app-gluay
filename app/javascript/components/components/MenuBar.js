@@ -9,10 +9,8 @@ import {
   NavLink,
 } from "reactstrap";
 import ShlfLogo from "../assets/shlf.svg";
-import "./MenuBar.css";
 import { Link } from "react-router-dom";
 
-// import "./Navbar.css";
 function MenuBar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -44,28 +42,32 @@ function MenuBar() {
                 <NavLink className="nav-link" onClick={closeMenu}>
                   <p>Home</p>
                 </NavLink>
-                </NavItem>
+              </NavItem>
             </Link>
             <Link to="/shlfindex">
-            <NavItem>
-              <NavLink className="nav-link" onClick={closeMenu}>
-                Shlf
-              </NavLink>
-            </NavItem>
+              <NavItem>
+                <NavLink className="nav-link" onClick={closeMenu}>
+                  Shlf
+                </NavLink>
+              </NavItem>
             </Link>
             <Link to="/blogindex">
-            <NavItem>
-              <NavLink to="/blogindex" className="nav-link" onClick={closeMenu}>
-                Blog
-              </NavLink>
-            </NavItem>
+              <NavItem>
+                <NavLink
+                  to="/blogindex"
+                  className="nav-link"
+                  onClick={closeMenu}
+                >
+                  Blog
+                </NavLink>
+              </NavItem>
             </Link>
             <Link to="/about">
-            <NavItem>
-              <NavLink to="/about" className="nav-link" onClick={closeMenu}>
-                About
-              </NavLink>
-            </NavItem>
+              <NavItem>
+                <NavLink to="/about" className="nav-link" onClick={closeMenu}>
+                  About
+                </NavLink>
+              </NavItem>
             </Link>
             <NavItem>
               <NavLink to="/about" className="nav-link" onClick={closeMenu}>

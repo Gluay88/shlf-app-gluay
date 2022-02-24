@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Card, CardTitle, Col } from "reactstrap";
 
-
-
 export class ShlfIndex extends Component {
   render() {
     return (
       <>
-        
         <br />
         <Col sm="6">
           {this.props.shlves.map((shlf) => {

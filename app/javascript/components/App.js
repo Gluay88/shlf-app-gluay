@@ -12,8 +12,7 @@ import BlogShow from "./pages/BlogShow";
 import BlogNew from "./pages/BlogNew";
 import BlogEdit from "./pages/BlogEdit";
 import Contacts from "./components/Contacts";
-import './App.css';
-
+import "./App.css";
 
 // import Particles from "react-particles-js";
 
@@ -26,61 +25,58 @@ export class App extends Component {
     };
   }
 
-  componentDidMount(){
-    this.readBlog(),
-    this.readShlf()
+  componentDidMount() {
+    this.readBlog(), this.readShlf();
   }
 
-  readBlog(){
+  readBlog() {
     fetch("http://localhost:3000/blogs")
-    .then(response => response.json())
-    .then(blogsArray => this.setState({blogs: blogsArray}))
-    .catch(errors => console.log("Blog read errors:", errors))
-
+      .then((response) => response.json())
+      .then((blogsArray) => this.setState({ blogs: blogsArray }))
+      .catch((errors) => console.log("Blog read errors:", errors));
   }
 
-  readShlf(){
+  readShlf() {
     fetch("http://localhost:3000/shlves")
-    .then(response => response.json())
-    .then(shlvesArray => this.setState({shlves: shlvesArray}))
-    .catch(errors => console.log("Shlf read errors:", errors))
-
+      .then((response) => response.json())
+      .then((shlvesArray) => this.setState({ shlves: shlvesArray }))
+      .catch((errors) => console.log("Shlf read errors:", errors));
   }
 
   createBlog = (newBlog) => {
     fetch("http://localhost:3000/blogs", {
-    body: JSON.stringify(newBlog),  
-    headers: {
-      "Content-Type": "application/json"
-    },
-    method: "POST"
-  })
-  .then(response => response.json())
-  .then(payload => this.readBlog())
-  .catch(errors => console.log("Blog create errors:", errors))
-  }
+      body: JSON.stringify(newBlog),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((payload) => this.readBlog())
+      .catch((errors) => console.log("Blog create errors:", errors));
+  };
 
   updateBlog = (blog, id) => {
     fetch(`http://localhost:3000/blogs/${id}`, {
       body: JSON.stringify(blog),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      method: "PATCH"
+      method: "PATCH",
     })
-    .then(response => response.json())
-    .then(payload => this.readBlog())
-    .catch(errors => console.log("Blog update errors: ", errors))
+      .then((response) => response.json())
+      .then((payload) => this.readBlog())
+      .catch((errors) => console.log("Blog update errors: ", errors));
   };
 
   deleteBlog = (id) => {
     console.log("id", id);
-  }
+  };
 
   render() {
     return (
       <>
-         {/* <Particles
+        {/* <Particles
         params={{
           particles: {
             number: {
@@ -92,9 +88,8 @@ export class App extends Component {
             }
           }
         }} */}
-      {/* /> */}
-        
-      
+        {/* /> */}
+
         <Router>
           <MenuBar />
           <Switch>
@@ -129,19 +124,19 @@ export class App extends Component {
             />
 
             <Route
-            path="/blogedit/:id"
-            render={(props) => {
-              let id = props.match.params.id
-              let blog = this.state.blogs.find(blog => blog.id === +id)
-              return <BlogEdit updateBlog={this.updateBlog} blog={blog} />
-            }} />
+              path="/blogedit/:id"
+              render={(props) => {
+                let id = props.match.params.id;
+                let blog = this.state.blogs.find((blog) => blog.id === +id);
+                return <BlogEdit updateBlog={this.updateBlog} blog={blog} />;
+              }}
+            />
 
             <Route path="/about" component={About} />
-            <Route component={NotFound}/>
+            <Route component={NotFound} />
           </Switch>
         </Router>
-        <Contacts/>
-      
+        <Contacts />
       </>
     );
   }

@@ -22,62 +22,85 @@ export class App extends Component {
     };
   }
 
-  componentDidMount(){
-    this.readBlog(),
-    this.readShlf()
+  componentDidMount() {
+    this.readBlog(), this.readShlf();
   }
 
-  readBlog(){
+  readBlog() {
     fetch("http://localhost:3000/blogs")
-    .then(response => response.json())
-    .then(blogsArray => this.setState({blogs: blogsArray}))
-    .catch(errors => console.log("Blog read errors:", errors))
-
+      .then((response) => response.json())
+      .then((blogsArray) => this.setState({ blogs: blogsArray }))
+      .catch((errors) => console.log("Blog read errors:", errors));
   }
 
-  readShlf(){
+  readShlf() {
     fetch("http://localhost:3000/shlves")
-    .then(response => response.json())
-    .then(shlvesArray => this.setState({shlves: shlvesArray}))
-    .catch(errors => console.log("Shlf read errors:", errors))
-
+      .then((response) => response.json())
+      .then((shlvesArray) => this.setState({ shlves: shlvesArray }))
+      .catch((errors) => console.log("Shlf read errors:", errors));
   }
 
   createBlog = (newBlog) => {
     fetch("http://localhost:3000/blogs", {
-    body: JSON.stringify(newBlog),  
-    headers: {
-      "Content-Type": "application/json"
-    },
-    method: "POST"
-  })
-  .then(response => response.json())
-  .then(payload => this.readBlog())
-  .catch(errors => console.log("Blog create errors:", errors))
-  }
+      body: JSON.stringify(newBlog),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .catch((errors) => console.log("Blog create errors:", errors));
+  };
 
   updateBlog = (blog, id) => {
     fetch(`http://localhost:3000/blogs/${id}`, {
       body: JSON.stringify(blog),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      method: "PATCH"
+      method: "PATCH",
     })
-    .then(response => response.json())
-    .then(payload => this.readBlog())
-    .catch(errors => console.log("Blog update errors: ", errors))
+      .then((response) => response.json())
+      .then((payload) => this.readBlog())
+      .catch((errors) => console.log("Blog update errors: ", errors));
   };
 
   deleteBlog = (id) => {
-    console.log("id", id);
-  }
+    fetch(`http://localhost:3000/blogs/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => response.json()
+    .this(payload => this.readBlog())
+    
+    )
+  };
 
   render() {
+    const {
+      logged_in,
+      current_user,
+      new_user_route,
+      sign_in_route,
+      sign_out_route,
+    } = this.props;
     return (
       <>
         <Header />
-        
+
+        {logged_in && (
+          <div>
+            <a href={sign_out_route}>Sign Out</a>
+          </div>
+        )}
+        {!logged_in && (
+          <div>
+            <a href={sign_in_route}>Sign In</a>
+          </div>
+        )}
+
         <Router>
           <Navbar />
           <Switch>
@@ -108,21 +131,23 @@ export class App extends Component {
             />
             <Route
               path="/blognew"
-              render={(props) => <BlogNew createBlog={this.createBlog} />}
+              render={(props) => <BlogNew createBlog={this.createBlog} current_user={current_user} />}
             />
 
             <Route
-            path="/blogedit/:id"
-            render={(props) => {
-              let id = props.match.params.id
-              let blog = this.state.blogs.find(blog => blog.id === +id)
-              return <BlogEdit updateBlog={this.updateBlog} blog={blog} />
-            }} />
+              path="/blogedit/:id"
+              render={(props) => {
+                let id = props.match.params.id;
+                let blog = this.state.blogs.find((blog) => blog.id === +id);
+                return <BlogEdit updateBlog={this.updateBlog} blog={blog} current_user={current_user}/>;
+              }}
+            />
 
             <Route path="/about" component={About} />
-            <Route component={NotFound}/>
+            <Route component={NotFound} />
           </Switch>
         </Router>
+
         <Footer />
       </>
     );

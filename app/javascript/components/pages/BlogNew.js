@@ -31,7 +31,6 @@ export class BlogNew extends Component {
   handleSubmit = () => {
     this.props.createBlog(this.state.newBlog);
     this.setState({ submitted: true });
-    debugger;
     this.props.readBlog();
     de;
   };

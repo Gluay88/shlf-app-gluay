@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import BlogIndex from "./pages/BlogIndex";
-// import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ShlfIndex from "./pages/ShlfIndex";
@@ -104,7 +103,6 @@ export class App extends Component {
           }
         }} */}
         {/* /> */}
-        <Header />
 
         {logged_in && (
           <div>

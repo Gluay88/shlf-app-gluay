@@ -13,8 +13,6 @@ import BlogEdit from "./pages/BlogEdit";
 import Contacts from "./components/Contacts";
 import "./App.css";
 
-// import Particles from "react-particles-js";
-
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +49,7 @@ export class App extends Component {
       method: "POST",
     })
       .then((response) => response.json())
+      .then(() => this.readBlog())
       .catch((errors) => console.log("Blog create errors:", errors));
   };
 
@@ -63,21 +62,17 @@ export class App extends Component {
       method: "PATCH",
     })
       .then((response) => response.json())
-      .then((payload) => this.readBlog())
+      .then(() => this.readBlog())
       .catch((errors) => console.log("Blog update errors: ", errors));
   };
 
   deleteBlog = (id) => {
     fetch(`http://localhost:3000/blogs/${id}`, {
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      method: "DELETE"
-    })
-    .then(response => response.json()
-    .this(payload => this.readBlog())
-    
-    )
+      method: "DELETE",
+    }).then((response) => response.json().then((payload) => this.readBlog()));
   };
 
   render() {
@@ -90,20 +85,6 @@ export class App extends Component {
     } = this.props;
     return (
       <>
-        {/* <Particles
-        params={{
-          particles: {
-            number: {
-              value: 30,
-              density: {
-                enable: true,
-                value_area: 900
-              }
-            }
-          }
-        }} */}
-        {/* /> */}
-
         {logged_in && (
           <div>
             <a href={sign_out_route}>Sign Out</a>
@@ -145,7 +126,13 @@ export class App extends Component {
             />
             <Route
               path="/blognew"
-              render={(props) => <BlogNew createBlog={this.createBlog} current_user={current_user} />}
+              render={(props) => (
+                <BlogNew
+                  createBlog={this.createBlog}
+                  current_user={current_user}
+                  readBlog={this.readBlog}
+                />
+              )}
             />
 
             <Route
@@ -153,7 +140,14 @@ export class App extends Component {
               render={(props) => {
                 let id = props.match.params.id;
                 let blog = this.state.blogs.find((blog) => blog.id === +id);
-                return <BlogEdit updateBlog={this.updateBlog} blog={blog} current_user={current_user}/>;
+                return (
+                  <BlogEdit
+                    updateBlog={this.updateBlog}
+                    blog={blog}
+                    current_user={current_user}
+                    shlf_id={this.state.shlves.id}
+                  />
+                );
               }}
             />
 

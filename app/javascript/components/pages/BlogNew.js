@@ -10,19 +10,19 @@ export class BlogNew extends Component {
         name: "",
         comment: "",
         user_id: this.props.current_user.id,
-      shlf_id: "",
+        shlf_id: "",
       },
       submitted: false,
     };
   }
 
   handleChange = (e) => {
-    let { newBlog } = this.state; 
+    let { newBlog } = this.state;
     newBlog[e.target.name] = e.target.value;
     this.setState({ newBlog: newBlog });
   };
 
-  handleChangeTwo = (e) => { 
+  handleChangeTwo = (e) => {
     let { newBlog } = this.state;
     newBlog.shlf_id = e.target.value;
     this.setState({ newBlog: newBlog });
@@ -31,13 +31,21 @@ export class BlogNew extends Component {
   handleSubmit = () => {
     this.props.createBlog(this.state.newBlog);
     this.setState({ submitted: true });
+    debugger;
+    this.props.readBlog();
+    de;
   };
 
   render() {
     return (
       <>
-        <select value={this.state.newBlog.shlf_id} onChange={this.handleChangeTwo}>
-          <option value="" disabled>Pick your Shlf</option>
+        <select
+          value={this.state.newBlog.shlf_id}
+          onChange={this.handleChangeTwo}
+        >
+          <option value="" disabled>
+            Pick your Shlf
+          </option>
           <option value="1">Apple</option>
           <option value="2">Banana</option>
           <option value="3">Blueberry</option>

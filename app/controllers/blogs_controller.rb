@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
 
     def update
         blog = Blog.find(params[:id])
-        blog.update(cat_params)
+        blog.update(blog_params)
         if blog.valid?
             render json: blog
         else

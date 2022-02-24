@@ -6,8 +6,16 @@ import { NavLink } from "react-router-dom";
 export class BlogShow extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      submitted: false,
+    };
   }
+
+  handleSubmit = () => {
+    this.props.deleteBlog(this.props.blog.id);
+    this.setState({ submitted: true });
+  };
+
   render() {
     const { blog } = this.props;
     return (
@@ -25,8 +33,9 @@ export class BlogShow extends Component {
         </NavLink>
         <br />
         <NavLink to="/blogindex" onClick={this.handleSubmit}>
-        <Button>Delete comment</Button>
-      </NavLink>
+          <Button>Delete comment</Button>
+        </NavLink>
+        {this.state.submitted && <Redirect to={`/blogindex`} />}
       </>
     );
   }

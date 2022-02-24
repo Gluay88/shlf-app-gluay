@@ -52,7 +52,6 @@ export class App extends Component {
       method: "POST",
     })
       .then((response) => response.json())
-      .then((payload) => this.readBlog())
       .catch((errors) => console.log("Blog create errors:", errors));
   };
 
@@ -70,10 +69,26 @@ export class App extends Component {
   };
 
   deleteBlog = (id) => {
-    console.log("id", id);
+    fetch(`http://localhost:3000/blogs/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => response.json()
+    .this(payload => this.readBlog())
+    
+    )
   };
 
   render() {
+    const {
+      logged_in,
+      current_user,
+      new_user_route,
+      sign_in_route,
+      sign_out_route,
+    } = this.props;
     return (
       <>
         {/* <Particles
@@ -89,6 +104,18 @@ export class App extends Component {
           }
         }} */}
         {/* /> */}
+        <Header />
+
+        {logged_in && (
+          <div>
+            <a href={sign_out_route}>Sign Out</a>
+          </div>
+        )}
+        {!logged_in && (
+          <div>
+            <a href={sign_in_route}>Sign In</a>
+          </div>
+        )}
 
         <Router>
           <MenuBar />
@@ -120,7 +147,7 @@ export class App extends Component {
             />
             <Route
               path="/blognew"
-              render={(props) => <BlogNew createBlog={this.createBlog} />}
+              render={(props) => <BlogNew createBlog={this.createBlog} current_user={current_user} />}
             />
 
             <Route
@@ -128,7 +155,7 @@ export class App extends Component {
               render={(props) => {
                 let id = props.match.params.id;
                 let blog = this.state.blogs.find((blog) => blog.id === +id);
-                return <BlogEdit updateBlog={this.updateBlog} blog={blog} />;
+                return <BlogEdit updateBlog={this.updateBlog} blog={blog} current_user={current_user}/>;
               }}
             />
 

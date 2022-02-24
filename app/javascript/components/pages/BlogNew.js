@@ -9,16 +9,22 @@ export class BlogNew extends Component {
       newBlog: {
         name: "",
         comment: "",
-        user_id: "",
-        shlf_id: "",
+        user_id: this.props.current_user.id,
+      shlf_id: "",
       },
       submitted: false,
     };
   }
 
   handleChange = (e) => {
-    let { newBlog } = this.state;
+    let { newBlog } = this.state; 
     newBlog[e.target.name] = e.target.value;
+    this.setState({ newBlog: newBlog });
+  };
+
+  handleChangeTwo = (e) => { 
+    let { newBlog } = this.state;
+    newBlog.shlf_id = e.target.value;
     this.setState({ newBlog: newBlog });
   };
 
@@ -30,17 +36,17 @@ export class BlogNew extends Component {
   render() {
     return (
       <>
-        <select defaultValue="">
+        <select value={this.state.newBlog.shlf_id} onChange={this.handleChangeTwo}>
           <option value="" disabled>Pick your Shlf</option>
-          <option value="1" shlf_id="1">Apple</option>
-          <option value="2" shlf_id="2">Banana</option>
-          <option value="3" shlf_id="3">Blueberry</option>
-          <option value="4" shlf_id="4">Strawberry</option>
-          <option value="5" shlf_id="5">Pineapple</option>
-          <option value="6" shlf_id="6">Grapefruit</option>
-          <option value="7" shlf_id="7">Grape</option>
-          <option value="8" shlf_id="8">Peach</option>
-          <option value="9" shlf_id="9">Melon</option>
+          <option value="1">Apple</option>
+          <option value="2">Banana</option>
+          <option value="3">Blueberry</option>
+          <option value="4">Strawberry</option>
+          <option value="5">Pineapple</option>
+          <option value="6">Grapefruit</option>
+          <option value="7">Grape</option>
+          <option value="8">Peach</option>
+          <option value="9">Melon</option>
         </select>
 
         <Form>

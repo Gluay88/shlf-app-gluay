@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Card, CardTitle, Col } from "reactstrap";
 import { Button } from "reactstrap";
-import "./BlogNew.css";
+// import "./BlogNew.css";
 
 export class BlogIndex extends Component {
   render() {

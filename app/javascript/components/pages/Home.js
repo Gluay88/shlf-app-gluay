@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import './Home.css'
 import Typed from "react-typed";
-// import Particles from "react-particles-js";
+import WhyShlf from "../components/WhyShlf";
+
 
 
 export class Home extends Component {
@@ -14,6 +15,11 @@ export class Home extends Component {
       
 
       <div className="main-title">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
       <h1>Keep Calm And Use Shlf !!!!</h1>
       </div>    
       <br></br>
@@ -33,6 +39,8 @@ export class Home extends Component {
       </div>
 
       </div>
+
+      <WhyShlf/>
       
     
       </>

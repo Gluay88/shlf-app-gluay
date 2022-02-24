@@ -7,16 +7,16 @@
     padding: 3rem;
     margin: 1rem 2rem;
     border-radius: 12px;
-    background-color: #80ced6;
+    background: #212529;
     font-size: 20px;
-    color: black;
+    color: whitesmoke;
     justify-content: center;
 }
 
 .About {
     text-align: center;
     margin-left: auto;
-  color: #34495E;
+  color: whitesmoke;
 }
 
 
@@ -32,4 +32,8 @@
 
 .text{
     color: white;
+}
+
+.jobs {
+    color: whitesmoke;
 }

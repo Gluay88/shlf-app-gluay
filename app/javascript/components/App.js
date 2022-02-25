@@ -72,7 +72,9 @@ export class App extends Component {
         "Content-Type": "application/json",
       },
       method: "DELETE",
-    }).then((response) => response.json().then((payload) => this.readBlog()));
+    })
+      .then((response) => response.json()
+      .then((payload) => this.readBlog()));
   };
 
   render() {

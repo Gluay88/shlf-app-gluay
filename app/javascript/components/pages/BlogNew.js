@@ -32,7 +32,6 @@ export class BlogNew extends Component {
     this.props.createBlog(this.state.newBlog);
     this.setState({ submitted: true });
     this.props.readBlog();
-    de;
   };
 
   render() {

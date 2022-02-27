@@ -76,11 +76,6 @@ function MenuBar() {
                 </NavLink>
               </NavItem>
             </Link>
-            <NavItem>
-              <NavLink to="/about" className="nav-link" onClick={closeMenu}>
-                Login
-              </NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

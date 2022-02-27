@@ -97,3 +97,4 @@ Update functionality
 
 02/27/2022
 API Validation
+gem 'simplecov', require: false, group: :test

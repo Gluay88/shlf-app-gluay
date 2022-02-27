@@ -1,0 +1,15 @@
+#recipe-container {
+  text-align: center;
+}
+#recipe-container h1 {
+  color: #207b85;
+}
+
+#recipe-container h4 {
+  color: #145b63;
+  margin-top: 20px;
+}
+
+#recipe-container img {
+  padding-top: 20px;
+}

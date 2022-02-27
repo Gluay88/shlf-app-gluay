@@ -20,11 +20,10 @@ export class BlogShow extends Component {
     const { blog } = this.props;
     return (
       <>
-        <h1>BlogShow.js</h1>
         <Col sm="6">
           <Card body>
             <CardTitle>{this.props.blog.name}</CardTitle>
-            <h2>comment: {this.props.blog.comment}</h2>
+            <h2>&#127827; comment: {this.props.blog.comment}</h2>
           </Card>
         </Col>
         <br />

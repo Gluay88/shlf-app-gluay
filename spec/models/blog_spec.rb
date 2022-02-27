@@ -9,4 +9,8 @@ RSpec.describe Blog, type: :model do
     gina = Blog.create comment: ''
     expect(gina.errors[:comment]).to_not be_empty
   end 
+  it 'is not valid wiithout a user_id' do
+    gina = Blog.create user_id: ''
+    expect(gina.errors[:user_id]).to_not be_empty
+  end 
 end

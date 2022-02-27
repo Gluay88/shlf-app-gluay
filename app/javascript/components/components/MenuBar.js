@@ -62,6 +62,13 @@ function MenuBar() {
                 </NavLink>
               </NavItem>
             </Link>
+            <Link to="/recipe">
+              <NavItem>
+                <NavLink to="/recipe" className="nav-link" onClick={closeMenu}>
+                  Recipes
+                </NavLink>
+              </NavItem>
+            </Link>
             <Link to="/about">
               <NavItem>
                 <NavLink to="/about" className="nav-link" onClick={closeMenu}>

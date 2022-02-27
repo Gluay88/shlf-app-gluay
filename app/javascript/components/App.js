@@ -11,6 +11,7 @@ import BlogShow from "./pages/BlogShow";
 import BlogNew from "./pages/BlogNew";
 import BlogEdit from "./pages/BlogEdit";
 import Contacts from "./components/Contacts";
+import Recipe from "./pages/Recipe";
 import "./App.css";
 
 export class App extends Component {
@@ -154,6 +155,7 @@ export class App extends Component {
             />
 
             <Route path="/about" component={About} />
+            <Route path="/recipe" component={Recipe} />
             <Route component={NotFound} />
           </Switch>
         </Router>

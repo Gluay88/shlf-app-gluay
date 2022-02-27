@@ -73,7 +73,9 @@ export class App extends Component {
         "Content-Type": "application/json",
       },
       method: "DELETE",
-    }).then((response) => response.json().then((payload) => this.readBlog()));
+    })
+      .then((response) => response.json()
+      .then((payload) => this.readBlog()));
   };
 
   render() {
@@ -86,7 +88,7 @@ export class App extends Component {
     } = this.props;
     return (
       <>
-        <div id="login-container">
+      <div id="login-container">
           {logged_in && (
             <div>
               <a href={sign_out_route}>Sign Out</a>
@@ -97,7 +99,7 @@ export class App extends Component {
               <a href={sign_in_route}>Sign In</a>
             </div>
           )}
-        </div>
+      </div>
 
         <Router>
           <MenuBar />

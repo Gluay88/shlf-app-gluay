@@ -11,7 +11,6 @@ export class ShlfShow extends Component {
     const { shlf } = this.props;
     return (
       <>
-        <h2>ShlfShow.js page</h2>
         <br />
         <Col sm="6">
           <Card body>

@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Shlf, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'is not valid without a name' do
+    apple = Shlf.create name: ''
+    expect(apple.errors[:name]).to_not be_empty
+  end
 end

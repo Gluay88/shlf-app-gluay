@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'it not valid without an email' do
+    gina = User.create email: ''
+    expect(gina.errors[:email]).to_not be_empty
+  end
 end

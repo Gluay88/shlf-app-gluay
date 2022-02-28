@@ -1,34 +1,16 @@
-<svg fill="none" viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-    <foreignObject width="100%" height="100%">
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <style>
-            h1 {
-                color: red;
-                animation: mymove 2s infinite;
-            }
-
-            @keyframes mymove {
-                from {
-                    color: red;
-                }
-                to {
-                    color: yellow;
-                }
-            }
-            </style>
-            <h1>RYDG Tech</h1>
-        </div>
-    </foreignObject>
-</svg>
-
 Hello there! Welcome to our README!
+
 Meet the team
 ![RYDGers](https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=740)
 
 > Gluay - Product Manager
+
 > Regina - Project Manager
+
 > Deon - Tech Lead
+
 > Yann - Design Lead
+
 
 02/17/2022
 # Create an app - React on Rails

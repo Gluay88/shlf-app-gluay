@@ -1,28 +1,62 @@
+Hello there! Welcome to our README!
+
+Meet the team "RYDG" 
+![RYDGers](https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=740)
+
+> Gluay - Product Manager
+
+> Regina - Project Manager
+
+> Deon - Tech Lead
+
+> Yann - Design Lead
+
+
 02/17/2022
+# Create an app - React on Rails
+### Step
+> $ rails new apartment-app -d postgresql -T
 
-$ rails new apartment-app -d postgresql -T
-$ cd apartment-app
-$ rails db:create
-Add the remote from your GitHub classroom repository
-Create a default branch (main)
-Make an initial commit to the repository
-$ bundle add rspec-rails
-$ rails generate rspec:install
-$ bundle add devise
-$ rails generate devise:install
-$ rails generate devise User
-$ bundle add react-rails
-$ rails webpacker:install:react
-$ rails generate react:install
-$ rails generate react:component App
-$ rails generate controller Home
-$ rails db:migrate
-$ rails s
+> $ cd apartment-app
 
+> $ rails db:create
+
+> Add the remote from your GitHub classroom repository
+
+> Create a default branch (main)
+
+> Make an initial commit to the repository
+
+> $ bundle add rspec-rails
+
+> $ rails generate rspec:install
+
+> $ bundle add devise
+
+> $ rails generate devise:install
+
+> $ rails generate devise User
+
+> $ bundle add react-rails
+
+> $ rails webpacker:install:react
+
+> $ rails generate react:install
+
+> $ rails generate react:component App
+
+> $ rails generate controller Home
+
+> $ rails db:migrate
+
+> $ rails s
+
+## Add bootstrap
 - add bootstrap
   yarn add bootstrap
   yarn add reactstrap
   Add to src/index.js: import 'bootstrap/dist/css/bootstrap.min.css'
+
 - add jest in package.json
   "jest": {
   "roots": [
@@ -32,7 +66,9 @@ $ rails s
 
 yarn add react-router-dom@5.3.0
 
-add components
+![Shlf](https://img.freepik.com/free-vector/juice-spray-fruit-illustration_1284-56500.jpg?w=740)
+
+## Add components
 
 - components
 
@@ -94,3 +130,7 @@ bin/webpack-dev-server
 
 02/23/2022
 Update functionality
+
+02/27/2022
+API Validation
+gem 'simplecov', require: false, group: :test

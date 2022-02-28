@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About";
 import BlogIndex from "./pages/BlogIndex";
-// import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ShlfIndex from "./pages/ShlfIndex";
@@ -12,9 +11,8 @@ import BlogShow from "./pages/BlogShow";
 import BlogNew from "./pages/BlogNew";
 import BlogEdit from "./pages/BlogEdit";
 import Contacts from "./components/Contacts";
+import Recipe from "./pages/Recipe";
 import "./App.css";
-
-// import Particles from "react-particles-js";
 
 export class App extends Component {
   constructor(props) {
@@ -52,6 +50,7 @@ export class App extends Component {
       method: "POST",
     })
       .then((response) => response.json())
+      .then(() => this.readBlog())
       .catch((errors) => console.log("Blog create errors:", errors));
   };
 
@@ -64,21 +63,19 @@ export class App extends Component {
       method: "PATCH",
     })
       .then((response) => response.json())
-      .then((payload) => this.readBlog())
+      .then(() => this.readBlog())
       .catch((errors) => console.log("Blog update errors: ", errors));
   };
 
   deleteBlog = (id) => {
     fetch(`http://localhost:3000/blogs/${id}`, {
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      method: "DELETE"
+      method: "DELETE",
     })
-    .then(response => response.json()
-    .this(payload => this.readBlog())
-    
-    )
+      .then((response) => response.json()
+      .then((payload) => this.readBlog()));
   };
 
   render() {
@@ -91,31 +88,18 @@ export class App extends Component {
     } = this.props;
     return (
       <>
-        {/* <Particles
-        params={{
-          particles: {
-            number: {
-              value: 30,
-              density: {
-                enable: true,
-                value_area: 900
-              }
-            }
-          }
-        }} */}
-        {/* /> */}
-        <Header />
-
-        {logged_in && (
-          <div>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
-        )}
-        {!logged_in && (
-          <div>
-            <a href={sign_in_route}>Sign In</a>
-          </div>
-        )}
+      <div id="login-container">
+          {logged_in && (
+            <div>
+              <a href={sign_out_route}>Sign Out</a>
+            </div>
+          )}
+          {!logged_in && (
+            <div>
+              <a href={sign_in_route}>Sign In</a>
+            </div>
+          )}
+      </div>
 
         <Router>
           <MenuBar />
@@ -147,7 +131,13 @@ export class App extends Component {
             />
             <Route
               path="/blognew"
-              render={(props) => <BlogNew createBlog={this.createBlog} current_user={current_user} />}
+              render={(props) => (
+                <BlogNew
+                  createBlog={this.createBlog}
+                  current_user={current_user}
+                  readBlog={this.readBlog}
+                />
+              )}
             />
 
             <Route
@@ -155,11 +145,19 @@ export class App extends Component {
               render={(props) => {
                 let id = props.match.params.id;
                 let blog = this.state.blogs.find((blog) => blog.id === +id);
-                return <BlogEdit updateBlog={this.updateBlog} blog={blog} current_user={current_user}/>;
+                return (
+                  <BlogEdit
+                    updateBlog={this.updateBlog}
+                    blog={blog}
+                    current_user={current_user}
+                    shlf_id={this.state.shlves.id}
+                  />
+                );
               }}
             />
 
             <Route path="/about" component={About} />
+            <Route path="/recipe" component={Recipe} />
             <Route component={NotFound} />
           </Switch>
         </Router>

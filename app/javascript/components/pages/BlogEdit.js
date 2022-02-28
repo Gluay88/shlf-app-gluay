@@ -7,10 +7,10 @@ export class BlogEdit extends Component {
     super(props);
     this.state = {
       newBlog: {
-        name: "",
-        comment: "",
+        name: this.props.blog.name,
+        comment: this.props.blog.comment,
         user_id: this.props.current_user.id,
-        shlf_id: "",
+        shlf_id: this.props.shlf_id,
       },
       submitted: false,
     };
@@ -51,13 +51,11 @@ export class BlogEdit extends Component {
               value={this.state.newBlog.comment}
             />
           </FormGroup>
-          <Button
-            name="submit"
-            onClick={this.handleSubmit}>
+          <Button name="submit" onClick={this.handleSubmit}>
             Edit Blog
           </Button>
         </Form>
-        {this.state.submitted && <Redirect to={`/catblog/${this.props.blog.id}`} />}
+        {this.state.submitted && <Redirect to={`/blogindex`} />}
       </>
     );
   }

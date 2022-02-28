@@ -2,6 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "Shlves", type: :request do
   describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+    it 'gets a list of shlves' do
+    Shlf.create(
+      name: "Melon pun",
+    )
+    get '/shlves'
+    blog = JSON.parse(response.body)
+    expect(response).to have_http_status(200)
+    end
   end
 end

@@ -5,7 +5,7 @@ import { Card, CardTitle, Col } from "reactstrap";
 export class ShlfIndex extends Component {
   render() {
     return (
-      <>
+      <div id="shlfindex-container">
         <br />
         <Col sm="6">
           {this.props.shlves.map((shlf) => {
@@ -23,7 +23,7 @@ export class ShlfIndex extends Component {
             );
           })}
         </Col>
-      </>
+      </div>
     );
   }
 }

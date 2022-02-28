@@ -17,7 +17,7 @@ const WhyShlfCarousel = () => {
         <img src={images} alt="Why Shlf?" />
         <div className="myCarousel">
           <h2> Why Shlf?</h2>
-          <p>shlf is an wesome app that is the best at what we have</p>
+          <p>shlf is an awesome app that is the best at what we have</p>
           <br></br>
         </div>
       </>
@@ -25,7 +25,7 @@ const WhyShlfCarousel = () => {
         <img src={images} alt="Why Shlf?" />
         <div className="myCarousel">
           <h2> Who is Shlf User?</h2>
-          <p>shlf is an wesome app that is the best at what we have</p>
+          <p>shlf is an awesome app that is the best at what we have</p>
           <br></br>
         </div>
       </>
@@ -33,7 +33,7 @@ const WhyShlfCarousel = () => {
         <img src={images} alt="Why Shlf?" />
         <div className="myCarousel">
           <h2> What is Shlf?</h2>
-          <p>shlf is an wesome app that is the best at what we have</p>
+          <p>shlf is an awesome app that is the best at what we have</p>
           <br></br>
         </div>
       </>

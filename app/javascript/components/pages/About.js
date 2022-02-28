@@ -3,7 +3,7 @@ import Gluay from "../assets/gluay_icon.svg";
 import Gina from "../assets/gina_icon.svg";
 import Deon from "../assets/deon_icon.svg";
 import Yann from "../assets/yann_icon.svg";
-import "./About.css";
+
 
 const About = () => {
   return (

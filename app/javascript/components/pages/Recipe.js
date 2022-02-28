@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Recipe.css";
+
 
 export class Recipe extends Component {
   render() {

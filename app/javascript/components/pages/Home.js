@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Home.css";
 import Typed from "react-typed";
 import WhyShlf from "../components/WhyShlf";
 

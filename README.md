@@ -66,6 +66,8 @@ Meet the team
 
 yarn add react-router-dom@5.3.0
 
+![Shlf](https://img.freepik.com/free-vector/juice-spray-fruit-illustration_1284-56500.jpg?w=740)
+
 ## Add components
 
 - components

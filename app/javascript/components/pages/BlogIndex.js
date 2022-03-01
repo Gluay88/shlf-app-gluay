@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Card, CardTitle, Col, Button } from "reactstrap";
-
-export class BlogIndex extends Component {
+class BlogIndex extends Component {
   render() {
     return (
       <>
         <Col sm="6">
-          {this.props.blogs.map((blog) => {
+          {this.props.blogs?.map((blog) => {
             return (
               <Card body key={blog.id}>
                 <CardTitle>

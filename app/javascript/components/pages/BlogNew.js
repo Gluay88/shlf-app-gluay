@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
-export class BlogNew extends Component {
+ class BlogNew extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,10 +36,11 @@ export class BlogNew extends Component {
 
   render() {
     return (
-      <>
+      <div  data-testid="BlogNew"> 
         <select
           value={this.state.newBlog.shlf_id}
           onChange={this.handleChangeTwo}
+         
         >
           <option value="" disabled>
             Pick your Shlf
@@ -81,7 +82,7 @@ export class BlogNew extends Component {
           </Button>
         </Form>
         {this.state.submitted && <Redirect to="blogindex" />}
-      </>
+      </div>
     );
   }
 }

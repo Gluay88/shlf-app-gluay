@@ -23,11 +23,18 @@ export class BlogIndex extends Component {
           })}
         </Col>
         <br />
-        <Button>
-          <a href="/blognew" style={{ color: "#fff" }}>
-            Add your comment
-          </a>
-        </Button>
+        <div>
+          {this.props.current_user && (
+            <Button>
+              <a href="/blognew" style={{ color: "#fff" }}>
+                Add your comment
+              </a>
+            </Button>
+          )}
+          {!this.props.current_user && (
+              <a href={this.props.sign_in_route}>Sign In</a>
+          )}
+      </div>
       </>
     );
   }

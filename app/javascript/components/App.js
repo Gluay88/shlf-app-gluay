@@ -119,7 +119,7 @@ export class App extends Component {
             />
             <Route
               path="/blogindex"
-              render={(props) => <BlogIndex blogs={this.state.blogs} />}
+              render={(props) => <BlogIndex blogs={this.state.blogs} current_user={current_user} sign_in_route={sign_in_route} />}
             />
             <Route
               path="/blogshow/:id"

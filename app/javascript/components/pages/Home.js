@@ -23,9 +23,9 @@ export class Home extends Component {
           <Typed
             className="typed-text"
             strings={[
-              "Team RYDGE",
-              "Because we believe we can change the world",
-              " and it start with saving you money",
+              "Team RYDG",
+              "We believe we can change the world",
+              " and it starts with saving you money",
             ]}
             typeSpeed={40}
             backSpeed={60}

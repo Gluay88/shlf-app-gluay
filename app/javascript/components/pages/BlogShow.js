@@ -28,7 +28,7 @@ export class BlogShow extends Component {
         </Col>
         <br />
         <NavLink to={`/blogedit/${this.props.blog.id}`}>
-          <Button>Edit comment</Button>
+          <Button>Update comment</Button>
         </NavLink>
         <br />
         <NavLink to="/blogindex" onClick={this.handleSubmit}>

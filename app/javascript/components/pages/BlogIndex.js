@@ -24,7 +24,7 @@ export class BlogIndex extends Component {
         </Col>
         <br />
         <Button>
-          <a href="http://localhost:3000/blognew" style={{ color: "#fff" }}>
+          <a href="/blognew" style={{ color: "#fff" }}>
             Add your comment
           </a>
         </Button>

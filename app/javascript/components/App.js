@@ -28,21 +28,21 @@ export class App extends Component {
   }
 
   readBlog() {
-    fetch("http://localhost:3000/blogs")
+    fetch("/blogs")
       .then((response) => response.json())
       .then((blogsArray) => this.setState({ blogs: blogsArray }))
       .catch((errors) => console.log("Blog read errors:", errors));
   }
 
   readShlf() {
-    fetch("http://localhost:3000/shlves")
+    fetch("/shlves")
       .then((response) => response.json())
       .then((shlvesArray) => this.setState({ shlves: shlvesArray }))
       .catch((errors) => console.log("Shlf read errors:", errors));
   }
 
   createBlog = (newBlog) => {
-    fetch("http://localhost:3000/blogs", {
+    fetch("/blogs", {
       body: JSON.stringify(newBlog),
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ export class App extends Component {
   };
 
   updateBlog = (blog, id) => {
-    fetch(`http://localhost:3000/blogs/${id}`, {
+    fetch(`/blogs/${id}`, {
       body: JSON.stringify(blog),
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ export class App extends Component {
   };
 
   deleteBlog = (id) => {
-    fetch(`http://localhost:3000/blogs/${id}`, {
+    fetch(`/blogs/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },

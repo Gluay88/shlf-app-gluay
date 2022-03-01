@@ -5,7 +5,7 @@ import { Card, CardTitle, Col, Button } from "reactstrap";
 export class BlogIndex extends Component {
   render() {
     return (
-      <>
+      <div id="blog-container">
         <Col sm="6">
           {this.props.blogs.map((blog) => {
             return (
@@ -35,7 +35,7 @@ export class BlogIndex extends Component {
               <a href={this.props.sign_in_route}>Sign In</a>
           )}
       </div>
-      </>
+      </div>
     );
   }
 }

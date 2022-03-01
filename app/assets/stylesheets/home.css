@@ -28,8 +28,8 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 20px;
-  font-family: "Roboto condesed", sans-serif;
-  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  color: whitesmoke;
 }
 
 /* ----------------------------------------------TYPED TEXT---------------------------------------------------------------- */
@@ -39,7 +39,8 @@
   display: flex;
   place-content: center;
   font-size: 2rem;
-  color: white;
+  color: whitesmoke;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* -------------------------------CAROUSSEL  ----------------------------------------------------------------------- */

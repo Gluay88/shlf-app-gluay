@@ -158,4 +158,5 @@ blogs = [
 
 blogs.each do |blog|
     Blog.create!(blog)
-end
+end 
+

@@ -52,7 +52,7 @@ export class BlogEdit extends Component {
             />
           </FormGroup>
           <Button name="submit" onClick={this.handleSubmit}>
-            Edit Blog
+            Update Blog
           </Button>
         </Form>
         {this.state.submitted && <Redirect to={`/blogindex`} />}

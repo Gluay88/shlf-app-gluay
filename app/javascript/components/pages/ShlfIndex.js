@@ -5,6 +5,7 @@ import { Card, CardTitle, Col } from "reactstrap";
 export class ShlfIndex extends Component {
   render() {
     return (
+      <div id="shlfindex-whole">
       <div id="shlfindex-container">
         <br />
         <Col sm="6">
@@ -23,6 +24,7 @@ export class ShlfIndex extends Component {
             );
           })}
         </Col>
+      </div>
       </div>
     );
   }

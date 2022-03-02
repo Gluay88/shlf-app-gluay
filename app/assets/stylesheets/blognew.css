@@ -40,10 +40,19 @@
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 90vh;
     width: 100%;
 
   }
   .btn-secondary {
       display: block;
+  }
+
+  #blogindex-button {
+    text-align: center;
+    padding-bottom: 4em;
+    color:#fff;
+  }
+  #blogindex-button a {
+    color:#fff;
+    text-decoration: none;
   }

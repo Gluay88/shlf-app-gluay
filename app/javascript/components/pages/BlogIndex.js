@@ -23,7 +23,7 @@ export class BlogIndex extends Component {
           })}
         </Col>
         <br />
-        <div>
+        <div id="blogindex-button">
           {this.props.current_user && (
             <Button>
               <a href="/blognew" style={{ color: "#fff" }}>
@@ -32,7 +32,9 @@ export class BlogIndex extends Component {
             </Button>
           )}
           {!this.props.current_user && (
+            <Button>
               <a href={this.props.sign_in_route}>Sign In</a>
+            </Button>
           )}
       </div>
       </div>

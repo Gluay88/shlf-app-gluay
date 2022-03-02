@@ -13,10 +13,12 @@ const WhyShlfCarousel = () => {
       interval={4000}
     >
       <>
-        <img src={images} alt="Why Shlf?" />
+      <img src={images} alt="Why Shlf?" />
         <div className="myCarousel">
           <h2> Why Shlf?</h2>
-          <p>shlf is an awesome app that is the best at what we have</p>
+          <p> . Avoid Waisting Food</p>
+          <p> . Save Money</p>
+          <p> . Save The World</p>
           <br></br>
         </div>
       </>
@@ -24,7 +26,7 @@ const WhyShlfCarousel = () => {
         <img src={images} alt="Why Shlf?" />
         <div className="myCarousel">
           <h2> Who is Shlf User?</h2>
-          <p>shlf is an awesome app that is the best at what we have</p>
+          <p>For Those who don't like to waist.</p>
           <br></br>
         </div>
       </>
@@ -32,10 +34,10 @@ const WhyShlfCarousel = () => {
         <img src={images} alt="Why Shlf?" />
         <div className="myCarousel">
           <h2> What is Shlf?</h2>
-          <p>shlf is an awesome app that is the best at what we have</p>
+          <p>Shlf Is A Friendly App To Help You With Your Lifestyle To Educate Users On Proper Storage Techniques. </p>
           <br></br>
         </div>
-      </>
+      </>   
     </Carousel>
   );
 };
